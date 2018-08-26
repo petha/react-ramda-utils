@@ -19,6 +19,7 @@ export const capitalizeFirstCharacter = R.compose(
 );
 
 export const titlelize = R.compose(
+  R.trim,
   R.join(' '),
   R.map(
     R.compose(
@@ -26,7 +27,8 @@ export const titlelize = R.compose(
       R.juxt([capitalizeFirstCharacter, R.tail]),
     ),
   ),
-  R.split(' ')
+  R.split(' '),
+  R.replace(/_/g, ' '),
 )
 
 export const getInitials = (list, delimiter=' ') => R.compose(

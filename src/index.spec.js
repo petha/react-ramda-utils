@@ -36,12 +36,10 @@ test('Initials for name with three components', () => {
 });
 
 
-test('Initials for name with three components', () => {
-  expect(getInitials('Anders Peter hagström')).toBe('A H')
-});
-
-
 test('Titlelize string', () => {
   expect(titlelize('diverse männen äter smör')).toBe('Diverse Männen Äter Smör')
 });
 
+test('Titlelize string with underscore', () => {
+  expect(titlelize('diverse_männen_äter_smör')).toBe('Diverse Männen Äter Smör')
+});
