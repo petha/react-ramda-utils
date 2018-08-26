@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-export const readableList = (list, lastDelimiter='and', transform = R.identity) => R.compose(
+export const readableList = R.curry((list, lastDelimiter='and', transform = R.identity) => R.compose(
   R.join(` ${lastDelimiter} `),
   R.filter(R.identity),
   R.juxt(
@@ -9,7 +9,7 @@ export const readableList = (list, lastDelimiter='and', transform = R.identity) 
       R.last,
     ]
   ),
-  R.map(transform))(list);
+  R.map(transform))(list));
 
 export const capitalizeFirstCharacter = R.compose(
   R.toUpper,
@@ -29,7 +29,7 @@ export const titlelize = R.compose(
   R.replace(/_/g, ' '),
 )
 
-export const getInitials = (list, delimiter=' ') => R.compose(
+export const getInitials = R.curry((list, delimiter=' ') => R.compose(
   R.trim,
   R.join(delimiter),
   R.juxt([
@@ -38,4 +38,4 @@ export const getInitials = (list, delimiter=' ') => R.compose(
   ]),
   R.map(capitalizeFirstCharacter),
   R.split(' '),
-)(list);
+)(list));
