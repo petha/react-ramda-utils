@@ -1,0 +1,28 @@
+{
+  "name": "react-ramda-utils",
+  "version": "1.0.0",
+  "description": "Some utilies we often use at Significat Bit for React projects.",
+  "main": "dist/react-ramda-utils.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "keywords": [
+    "React",
+    "Ramda",
+    "Text",
+    "Utilities",
+    "Utils"
+  ],
+  "author": "Peter Hagström",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.4.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.5.0",
+    "ramda": "^0.25.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
